@@ -2,6 +2,9 @@
   "name": "@rx-free/react",
   "version": "1.0.0-beta.1",
   "main": "src/index.ts",
+  "author": "wlf100220",
+  "homepage": "https://github.com/wlf100220/rx-free.git",
+  "repository": "https://github.com/wlf100220/rx-free.git",
   "dependencies": {
     "react": "^18.1.0",
     "@rx-free/core": "link:../core",
