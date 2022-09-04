@@ -8,7 +8,7 @@
   "repository": "https://github.com/wlf100220/rx-free.git",
   "dependencies": {
     "vue": "^3.2.37",
-    "@rx-free/core": "link:../core",
+    "@rx-free/core": "1.0.0",
     "rxjs": "^7.5.5"
   }
 }
