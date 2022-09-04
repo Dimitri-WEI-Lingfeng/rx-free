@@ -2,7 +2,17 @@
 
 `rx-free` is a web **framework-agnostic** and light **rxjs** state management library.
 
+It does not use FLUX pattern.
+
 ## features
+
+- selectors
+- getters
+- immer way to mutate state
+- free to use rx observable api
+- builtin react and vue
+- extensible to other framework
+- integrated redux devtools 
 
 # Usage
 
@@ -96,7 +106,21 @@ function fetchCurrentPage() {
 ```
 
 ## Use rxjs' operators
-```ts
 
-store.observable$.pip()
+```ts
+import { distinctUntilKeysChanged } from "@rx-free/core";
+
+const history = []
+
+function saveStoreHistoryWhenChange() {
+  store.observable$.subscribe((st) => {
+    history.push(st)
+  })
+}
+
+function fetchPageContentWhenPageChange() {
+  store.observable$.pipe(distinctUntilKeysChanged(['page'])).subscribe(({page}) => {
+    fetchPage(page)
+  })
+}
 ```

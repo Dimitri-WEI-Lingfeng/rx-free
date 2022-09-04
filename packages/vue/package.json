@@ -1,6 +1,6 @@
 {
   "name": "@rx-free/vue",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "files": ["src"],
   "author": "wlf100220",
