@@ -1,0 +1,11 @@
+node_modules/*
+config/*
+scripts/*
+mock/*
+public/*
+babel.main.js
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+build
+.husky

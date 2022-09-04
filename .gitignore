@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+releases
+*.local
+*.local.*
+mock
+.idea
+.pnpm-debug.log
+packages/minidam-mock/fixtures
+packages/virtual-scene/examples
+coverage
+.vscode*
+playwright-report
+src-tauri

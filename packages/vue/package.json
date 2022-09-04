@@ -1,0 +1,11 @@
+{
+  "name": "@rx-free/vue",
+  "version": "1.0.0-beta.1",
+  "main": "src/index.ts",
+  "files": ["src"],
+  "dependencies": {
+    "vue": "^3.2.37",
+    "@rx-free/core": "link:../core",
+    "rxjs": "^7.5.5"
+  }
+}

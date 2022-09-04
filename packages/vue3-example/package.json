@@ -1,0 +1,22 @@
+{
+  "name": "vue3-example",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.25",
+    "rx-store": "link:../core"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vue-tsc": "^0.34.7",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "@rx-free/vue": "link:../vue"
+  }
+}
