@@ -130,6 +130,8 @@ export function defineStore<T, Getters extends object>(
     }
   };
 
+  subject$.next(stateWithGettersRef.value)
+
   if (config.getters) {
     observable$ = new ReplaySubject<R>(1);
     subject$.subscribe((st) => {

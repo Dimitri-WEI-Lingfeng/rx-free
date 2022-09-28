@@ -1,5 +1,5 @@
 import { onUnmounted, Ref, ref } from 'vue';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, skip } from 'rxjs';
 import { distinctUntilKeysChanged } from '@rx-free/core/src/operators/distinctUntilKeysChanged';
 
 export interface IRxStateOptions<T, Key extends keyof T = keyof T> {
@@ -22,9 +22,11 @@ export default function useRxState<T, Key extends keyof T>(
 ): Ref<Partial<T>> {
   const v = ref<Partial<T>>(initialStateFactory());
 
-  const sub = observable$.pipe(options.keys ? distinctUntilKeysChanged(options.keys) : tap()).subscribe((st) => {
-    v.value = st;
-  });
+  const sub = observable$
+    .pipe(skip(1), options.keys ? distinctUntilKeysChanged(options.keys) : tap())
+    .subscribe((st) => {
+      v.value = st;
+    });
   onUnmounted(() => {
     sub.unsubscribe();
   });

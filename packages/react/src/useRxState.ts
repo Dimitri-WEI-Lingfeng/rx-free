@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, skip } from 'rxjs';
 import { distinctUntilKeysChanged } from '@rx-free/core/src/operators/distinctUntilKeysChanged';
 
 export interface IRxStateOptions<T, Key extends keyof T = keyof T> {
@@ -25,7 +25,7 @@ export default function useRxState<T, Key extends keyof T>(
   const [state, setState] = useState(initialState);
   useEffect(() => {
     const sub = observable$
-      .pipe(options.keys ? distinctUntilKeysChanged(options.keys || []) : tap())
+      .pipe(skip(1), options.keys ? distinctUntilKeysChanged(options.keys || []) : tap())
       .subscribe((st) => {
         setState(st);
       });

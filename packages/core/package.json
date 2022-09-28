@@ -1,6 +1,6 @@
 {
   "name": "@rx-free/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.ts",
   "author": "wlf100220",
   "homepage": "https://github.com/wlf100220/rx-free.git",
